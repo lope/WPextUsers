@@ -7,7 +7,7 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 ###Compatible with WP versions
 * 4.0
 
-###What has been tested successfully
+###Successfully tested
 * Log in and log-out on different sites.
 * Change password at one site, and see that it has been changed at the other.
 * Change usermeta data on one site for a user's profile and see it updated on the other site.
