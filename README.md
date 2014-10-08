@@ -29,7 +29,7 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 ###The main principles of the hack
 * Wordpress defines a *wpdb* class and creates a single instance of it called *$wpdb* to access the default database. I've created another instance of that class called *$wpUsersDB* and initialized it in the same way.
 * Code that was referring to *$wpdb* to access *user data* has been modified to refer to *$wpUsersDB* instead.
-* Rename tables that are not used in order to avoid confusion and also cause WP to produce an error if it tries to access the tables on the wrong DB. An error is a much better indication of a missing code-patch than strange un-detected behavior.
+* Tables that are not used are renamed by the installer in order to avoid confusion and also cause WP to produce an error if it tries to access the tables on the wrong DB. (An error is a much better indication of a missing code-patch than strange un-detected behavior).
 
 ###Suggestions if you want to go into production
 * Test emails.
