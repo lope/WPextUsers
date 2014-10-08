@@ -162,7 +162,7 @@ function install() {
 	$dbuser = getSafePost('dbuser');
 	$dbpass = getSafePost('dbpass');
 	$dbhost = getSafePost('dbhost');
-	if (getDBnameFromWPconfig()===$dbname) exit("Error, you have entered the same DB name ($dbname) as the main DB used by this wordpress install. Aborting.");
+	if (getValueFromWPconfig("define('DB_NAME'")===$dbname) exit("Error, you have entered the same DB name ($dbname) as the main DB used by this wordpress install. Aborting.");
 	//rename db tables for safety and to avoid confusion
 	rename_db_tables($dbname, $dbuser, $dbpass, $dbhost);
 	//modify WP content install's files
@@ -245,7 +245,7 @@ function install() {
 			exit("\$wp_version $wp_version is missing a rule for: DB consts");
 	}
 	//finished
-	global $wpHasBeenModified_file; file_put_contents($wpHasBeenModified_file, 'This is a hack to allow multiple installs of wordpress to have their own independent DB for most things, but share a single external DB for users.');
+	global $wpHasBeenModified_file; file_put_contents($wpHasBeenModified_file, 'https://github.com/lope/WPextUsers This Wordpress hack allows you to have multiple WP installs (each with their own files and DB for content) that all share a single DB of users. The hack modifies Wordpress installations to refer to an external database when accessing the wp_users and wp_usermeta tables.');
 	exit("Install finished");
 }
 
@@ -298,13 +298,7 @@ function modifyFile($fileName,$mode,$find,$insert,$alreadyPatched) {
 	}//not already patched
 }
 
-function getDBnameFromWPconfig() {
-	$buf = file_get_contents(__DIR__.'/wp-config.php');
-	$pos=strpos($buf,"define('DB_NAME'");
-	$posComma = strpos($buf,',',$pos);
-	$posBracket = strpos($buf,')',$posComma);
-	return preg_replace('/[^A-Za-z\d]/','',substr($buf,$posComma+1,$posBracket-$posComma-1));
-}
+
 function getValueFromWPconfig($key) {
 	$buf = file_get_contents(__DIR__.'/wp-config.php');
 	$pos=strpos($buf,$key); if ($pos===false) exit("Could not find key $key in /wp-config.php");
@@ -326,7 +320,9 @@ function rename_db_tables($dbname, $dbuser, $dbpass, $dbhost) {
 	rename_table_mysqli($dbname,$dbuser,$dbpass,$dbhost,$tblPrefix,$uTbls,"$dbname(Users DB)",'_not_used');//===false) rename_table_mysql($dbname,$dbuser,$dbpass,$dbhost,$tblPrefix,$uTbls,"$dbname(Users DB)",'_not_used');
 	rename_table_mysqli($cDBname,$cDBuser,$cDBpass,$cDBhost,$tblPrefix,$cTbls,"$cDBname(Content DB)",'_using_external_instead');//===false) rename_table_mysql($cDBname,$cDBuser,$cDBpass,$cDBhost,$tblPrefix,$cTbls,"$cDBname(Content DB)",'_not_used');
 }
-/*function rename_table_mysql($dbname,$dbuser,$dbpass,$dbhost,$tblPrefix,$tblNames,$dbdesc,$addSuffix) {
+/*
+originally I included the old PHP MySQL code for older installs, then I decided not to bother with it.
+function rename_table_mysql($dbname,$dbuser,$dbpass,$dbhost,$tblPrefix,$tblNames,$dbdesc,$addSuffix) {
 	echo "MySQL connecting to DB: $dbdesc with user:$dbuser pass:$dbpass prefix:$tblPrefix at host $dbhost<br>";
 	$con = mysql_connect($dbhost,$dbuser,$dbpass);
 	if ($con===false) {echo "Could not connect to DB $dbname at host $dbhost with user:$dbuser pass:$dbpass with MySQL: ".mysql_error()."<br>"; return false;}
