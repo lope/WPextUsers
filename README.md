@@ -48,12 +48,11 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 The hack was initially developed with WP version 4.0: http://wordpress.org/wordpress-4.0.tar.gz
 
 ###How to install (simple explanation)
-1. Make a WP install for your Users DB.
-2. Delete those WP install files but keep the DB.
-3. Make another WP install.
-4. Plonk the file into the root directory with wordpress.
-5. Open _externalUsersInstall.php in your browser and click *Install Now*
-6. Repeat steps 3-5 for more installs.
+1. Make a WP install for your Users DB and delete the files afterwards.
+2. Make another WP install with its own DB.
+3. Plonk the file into the root directory with wordpress.
+4. Open _externalUsersInstall.php in your browser, complete the 4 fields, click *Install Now*
+5. Repeat steps 2-4 for more installs.
 
 ###How to install (detailed explanation)
 1. Create a MySQL DB that will hold your wp_users & wp_usermeta tables (lets pretend the DB is called wpusers)
