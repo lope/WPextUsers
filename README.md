@@ -13,8 +13,8 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 * 4.0
 
 ###Successfully tested
-* Log in and log-out on different sites.
-* Change password at one site, and see that it has been changed at the other.
+* Log in and log-out using a single user account on multiple sites.
+* Change password at any site, that change affects all sites. (obviously)
 * Change usermeta data on one site for a user's profile and see it updated on the other site.
 
 ###Current Limitations
