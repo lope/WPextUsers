@@ -1,5 +1,5 @@
 #WPextUsers
-This Wordpress hack allows you to have multiple WP installs (each with their own separate files and DB for content) that all share a single DB of users. The hack modifies Wordpress installations to refer to an external database when accessing the **wp_users** and **wp_usermeta** tables.
+WPextUsers is a Wordpress hack that allows you to have multiple WP installs (each with their own separate files and DB for content) and they all share one DB for user information. The hack modifies Wordpress installations to refer to an external database when accessing the **wp_users** and **wp_usermeta** tables.
 
 ###Project goals (have been met)
 * Create a proof of concept
