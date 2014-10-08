@@ -47,7 +47,15 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 
 The hack was initially developed with WP version 4.0: http://wordpress.org/wordpress-4.0.tar.gz
 
-###How to install
+###How to install (simple explanation)
+1. Make a WP install for your Users DB.
+2. Delete those WP install files but keep the DB.
+3. Make another WP install.
+4. Plonk the file into the root directory with wordpress.
+5. Open _externalUsersInstall.php in your browser and click *Install Now*
+6. Repeat steps 3-5 for more installs.
+
+###How to install (detailed explanation)
 1. Create a MySQL DB that will hold your wp_users & wp_usermeta tables (lets pretend the DB is called wpusers)
 2. Create a normal WP installation that uses the wpusers database. Complete all the WP install questions until you see a WP login screen (let's say you call the admin account mainAdmin).
 3. Now that the wpusers DB is initialized you can delete this wordpress installation, and just keep the database. You can also delete all the tables in the database except wp_users & wp_usermeta if you like.
