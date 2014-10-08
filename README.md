@@ -7,7 +7,8 @@ This Wordpress hack allows you to have multiple WP installs (each with their own
 * Make the code available for others to use and improve.
 
 ###Hack Status
-This is a proof of concept. It is not production ready yet. I don't have time to work on it any more. I suggest you fork it and improve it.
+This is a proof of concept. It is not production ready yet.
+I don't have time to work on it any more. I suggest you fork it and improve it.
 
 ###Compatible with WP versions
 * 4.0
