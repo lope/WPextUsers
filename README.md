@@ -21,15 +21,15 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 * When a user logs in at one WP site, they are not automatically logged in on another WP site. That will probably require hacking WP's cookie system as well.
 
 ###Requirements
-* Same table prefix: All DB's in the entire set must use the same wordpress DB table prefix (wp_ by default).
+* Same table prefix: All DB's in the entire set must use the same wordpress DB table prefix (*wp_* by default).
 * Write permissions: The installer needs write permission to files and directories within the wordpress directory.
 * Re-hack on update: After updating wordpress you might have to re-hack it.
-* Files: Only one: _externalUsersInstall.php
+* Files: Only one: *_externalUsersInstall.php*
 
 ###The main principles of the hack
-Wordpress defines a wpdb class and creates a single instance of it called $wpdb to access the default database. I've created another instance of that class called $wpUsersDB and initialized it in the same way.
-Code that was referring to $wpdb to access user data has been modified to refer to $wpUsersDB instead.
-Rename tables that are not used in order to avoid confusion and also cause WP to produce an error if it tries to access the tables on the wrong DB. An error is a much better indication of a missing code-patch than strange un-detected behavior.
+* Wordpress defines a *wpdb* class and creates a single instance of it called *$wpdb* to access the default database. I've created another instance of that class called *$wpUsersDB* and initialized it in the same way.
+* Code that was referring to *$wpdb* to access *user data* has been modified to refer to *$wpUsersDB* instead.
+* Rename tables that are not used in order to avoid confusion and also cause WP to produce an error if it tries to access the tables on the wrong DB. An error is a much better indication of a missing code-patch than strange un-detected behavior.
 
 ###Suggestions if you want to go into production
 * Test emails.
@@ -39,8 +39,8 @@ Rename tables that are not used in order to avoid confusion and also cause WP to
 * Check/modify /wp-admin/user-new.php (I never got around to it, maybe more files need attention).
 
 ###What could go wrong?
-I'm not very familiar with the Wordpress. I've wildly monkey patched a few files that 'seem' to be 'all about users', replacing all references from the default DB to the Users DB, and have only skim read the WP code. I've not checked every single replacement carefully. Some replacements might be missing, some might be incorrect. Read the resulting code yourself. Or test thoroughly. It's your responsibility to make sure your site works.
-If WP tries to do any table joins between user tables and other tables, that simply wouldn't work and would result in an error. Again I'm a Wordpress novice so I don't know what the risk of this is. I saw JOIN in one or two places, I haven't checked what tables they're joining.
+* I'm not very familiar with the Wordpress. I've wildly monkey patched a few files that 'seem' to be 'all about users', replacing all references from the default DB to the Users DB, and have only skim read the WP code. I've not checked every single replacement carefully. Some replacements might be missing, some might be incorrect. Read the resulting code yourself. Or test thoroughly. It's your responsibility to make sure your site works.
+* If WP tries to do any table joins between user tables and other tables, that simply wouldn't work and would result in an error. Again I'm a Wordpress novice so I don't know what the risk of this is. I saw JOIN in one or two places, I haven't checked what tables they're joining.
 
 ###Future wishlist
 * If WP has permissions to do a self-update, make it run the hack again afterwards, automatically.
