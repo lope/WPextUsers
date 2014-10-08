@@ -21,13 +21,11 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 * Re-hack on update: After updating wordpress you might have to re-hack it.
 
 ###Suggestions if you want to go into production
-* check/modify /wp-admin/user-new.php (I never got around to it, maybe more files need attention)
-* Test creating new users.
-* Test modifying other user's details by admin
-* Test emails
-* Test forgot password
-* Test CRUD (create read update delete) of users, posts, pages
+* Test emails.
+* Test forgot password.
+* Test CRUD (create read update delete) users, posts, pages.
 * Read the code to see what get's modified, check that everything looks okay.
+* Check/modify /wp-admin/user-new.php (I never got around to it, maybe more files need attention).
 
 ###What could go wrong?
 I'm not very familiar with the Wordpress. I've wildly monkey patched a few files that 'seem' to be 'all about users', replacing all references from the default DB to the Users DB, and have only skim read the WP code. I've not checked every single replacement carefully. Some replacements might be missing, some might be incorrect. Read the resulting code yourself. Or test thoroughly. It's your responsibility to make sure your site works.
