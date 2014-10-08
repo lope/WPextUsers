@@ -45,7 +45,7 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 ###Future wishlist
 * If WP has permissions to do a self-update, make it run the hack again afterwards, automatically.
 
-The hack was initially developed with WP version 4.0: http://wordpress.org/wordpress-4.0.tar.gz
+WPextUsers was initially developed with WP version 4.0: http://wordpress.org/wordpress-4.0.tar.gz
 
 ###How to install (simple explanation)
 1. Make a WP install for your Users DB and delete the files afterwards.
