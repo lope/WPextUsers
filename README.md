@@ -4,7 +4,7 @@ This Wordpress hack allows you to have multiple WP installs (each with their own
 ###Project goals (have been met)
 * Create a proof of concept
 * Create an installer that can modify a WP installation with one click.
-* Make the code available for others to improve.
+* Make the code available for others to use and improve.
 
 ###Hack Status
 This is a proof of concept. It is not production ready yet. I don't have time to work on it any more. I suggest you fork it and improve it.
