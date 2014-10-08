@@ -44,6 +44,10 @@ I don't have time to work on it any more. I suggest you fork it and improve it.
 * I'm not very familiar with the Wordpress. I've wildly monkey patched a few files that 'seem' to be 'all about users', replacing all references from the default DB to the Users DB, and have only skim read the WP code. I've not checked every single replacement carefully. Some replacements might be missing, some might be incorrect. Read the resulting code yourself. Or test thoroughly. It's your responsibility to make sure your site works.
 * If WP tries to do any table joins between user tables and other tables, that simply wouldn't work and would result in an error. Again I'm a Wordpress novice so I don't know what the risk of this is. I saw JOIN in one or two places, I haven't checked what tables they're joining.
 
+###How do you know if it's working?
+* Firstly it should be obvious when you modify user data between two sites.
+* Secondly (you should familiarize yourself with your dev environment) I used to get errors whenever WP tried to access an invalid DB object or tried to access a table that was not there. So if there are no errors that's a pretty good indication it's working. I didn't get any errors after completing the code as is, and my tests were successful.
+
 ###Future wishlist
 * If WP has permissions to do a self-update, make it run the hack again afterwards, automatically.
 
