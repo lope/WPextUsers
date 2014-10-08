@@ -24,7 +24,7 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 * Same table prefix: All DB's in the entire set must use the same wordpress DB table prefix (*wp_* by default).
 * Write permissions: The installer needs write permission to files and directories within the wordpress directory.
 * Re-hack on update: After updating wordpress you might have to re-hack it.
-* Files: Only one: *_externalUsersInstall.php*
+* Files: Only one: *_WPextUsersInstall.php*
 
 ###The main principles of the hack
 * Wordpress defines a *wpdb* class and creates a single instance of it called *$wpdb* to access the default database. I've created another instance of that class called *$wpUsersDB* and initialized it in the same way.
@@ -50,7 +50,7 @@ The hack was initially developed with WP version 4.0: http://wordpress.org/wordp
 ###How to install (simple explanation)
 1. Make a WP install for your Users DB and delete the files afterwards.
 2. Make another WP install with its own DB.
-3. Copy _externalUsersInstall.php into the WP directory.
+3. Copy _WPextUsersInstall.php into the WP directory.
 4. Open it in your browser, complete the 4 fields, click *Install Now*
 5. Repeat steps 2-4 for more installs.
 
@@ -60,7 +60,7 @@ The hack was initially developed with WP version 4.0: http://wordpress.org/wordp
 3. Now that the *wpusers* DB is initialized you can delete the wordpress files & dirs, just keep the database.
 4. Create a new WP installation for the first site, let's pretend it's called *site A*. Complete all the WP install questions until you see a WP login screen
 5. After you've completed the installation for *site A*, make sure the webserver (Apache, Nginx or HHVM) has write permissions to the files and directories inside the installation.
-6. Put this php file (_externalUsersInstall.php) in the root of *site A* and open it in your browser.
+6. Put this php file (_WPextUsersInstall.php) in the root of *site A* and open it in your browser.
 7. Fill in the database details for your central USERS database that will hold your *wp_users* & *wp_usermeta* tables for all of your sites. (*wpusers* is the name of that DB in this example)
 8. Click install now
 9. Now you can log in with the username *mainAdmin* at *site A*
