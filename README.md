@@ -50,8 +50,8 @@ The hack was initially developed with WP version 4.0: http://wordpress.org/wordp
 ###How to install (simple explanation)
 1. Make a WP install for your Users DB and delete the files afterwards.
 2. Make another WP install with its own DB.
-3. Plonk the file into the root directory with wordpress.
-4. Open _externalUsersInstall.php in your browser, complete the 4 fields, click *Install Now*
+3. Copy _externalUsersInstall.php into the WP directory.
+4. Open it in your browser, complete the 4 fields, click *Install Now*
 5. Repeat steps 2-4 for more installs.
 
 ###How to install (detailed explanation)
