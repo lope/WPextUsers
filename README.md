@@ -55,15 +55,15 @@ The hack was initially developed with WP version 4.0: http://wordpress.org/wordp
 5. Repeat steps 2-4 for more installs.
 
 ###How to install (detailed explanation)
-1. Create a MySQL DB that will hold your wp_users & wp_usermeta tables (lets pretend the DB is called wpusers)
-2. Create a normal WP installation that uses the wpusers database. Complete all the WP install questions until you see a WP login screen (let's say you call the admin account mainAdmin).
-3. Now that the wpusers DB is initialized you can delete this wordpress installation, and just keep the database. You can also delete all the tables in the database except wp_users & wp_usermeta if you like.
-4. Create a new WP installation for the first site, let's pretend it's called site A. Complete all the WP install questions until you see a WP login screen
-5. After you've completed the installation for site A, make sure the webserver (Apache, Nginx or HHVM) has write permissions to the files and directories inside the installation.
-6. Put this php file (/var/www/html/wp/wp2/_externalUsersInstall.php) in the root of site A and open it in your browser.
-7. Fill in the database details for your central USERS database that will hold your wp_users & wp_usermeta tables for all of your sites. (the DB name is wpusers in this example)
+1. Create a MySQL DB that will hold your *wp_users* & *wp_usermeta* tables (lets pretend the DB is called *wpusers*)
+2. Create a normal WP installation that uses the *wpusers* database. Complete all the WP install questions until you see a WP login screen (let's say you call the admin account *mainAdmin*).
+3. Now that the *wpusers* DB is initialized you can delete the wordpress files & dirs, just keep the database.
+4. Create a new WP installation for the first site, let's pretend it's called *site A*. Complete all the WP install questions until you see a WP login screen
+5. After you've completed the installation for *site A*, make sure the webserver (Apache, Nginx or HHVM) has write permissions to the files and directories inside the installation.
+6. Put this php file (_externalUsersInstall.php) in the root of *site A* and open it in your browser.
+7. Fill in the database details for your central USERS database that will hold your *wp_users* & *wp_usermeta* tables for all of your sites. (*wpusers* is the name of that DB in this example)
 8. Click install now
-9. Now you can log in with the username mainAdmin at site A
+9. Now you can log in with the username *mainAdmin* at *site A*
 10. Repeat steps 5-9 to add more sites
 
 ###Tips on setting file permissions
