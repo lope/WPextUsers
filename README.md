@@ -67,10 +67,10 @@ The hack was initially developed with WP version 4.0: http://wordpress.org/wordp
 10. Repeat steps 5-9 to add more sites
 
 ###Tips on setting file permissions
-####While you're doing the installation, you can set convenient permissions like this: (where /var/www is the root of your WP installation)
+#####While you're doing the installation, you can set convenient permissions like this: (where /var/www is the root of your WP installation)
 `sudo find /var/www -type d -exec chmod 777 {} +`
 `sudo find /var/www -type f -exec chmod 666 {} +`
-####After you've finished the installation, more secure permissions might be something like:
+#####After you've finished the installation, more secure permissions might be something like:
 `sudo find /home/web -type d -exec chmod 755 {} +`
 `sudo find /home/web -type f -exec chmod 644 {} +`
 
