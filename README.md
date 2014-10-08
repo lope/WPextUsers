@@ -7,6 +7,11 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 ###Compatible with WP versions
 * 4.0
 
+###Project goals (have been met)
+* Create a proof of concept
+* Create an installer that can modify a WP installation with one click.
+* Make the code available for others to improve.
+
 ###Successfully tested
 * Log in and log-out on different sites.
 * Change password at one site, and see that it has been changed at the other.
@@ -19,6 +24,7 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 * Same table prefix: All DB's in the entire set must use the same wordpress DB table prefix (wp_ by default).
 * Write permissions: The installer needs write permission to files and directories within the wordpress directory.
 * Re-hack on update: After updating wordpress you might have to re-hack it.
+* Files: Only one: _externalUsersInstall.php
 
 ###Suggestions if you want to go into production
 * Test emails.
