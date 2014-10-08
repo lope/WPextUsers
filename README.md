@@ -16,8 +16,8 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 * When a user logs in at one WP site, they are not automatically logged in on another WP site. That will probably require hacking WP's cookie system as well.
 
 ###Requirements
-* Same table prefix: All DB's in the entire set must use the same wordpress DB table prefix (wp_ by default)
-* Write permissions: The installer needs write permission to files and directories within the wordpress directory
+* Same table prefix: All DB's in the entire set must use the same wordpress DB table prefix (wp_ by default).
+* Write permissions: The installer needs write permission to files and directories within the wordpress directory.
 * Re-hack on update: After updating wordpress you might have to re-hack it.
 
 ###Suggestions if you want to go into production
