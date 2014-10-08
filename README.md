@@ -7,16 +7,13 @@ This is a proof of concept. It is not production ready yet. I don't have time to
 ###Compatible with WP versions
 * 4.0
 
-###Expected capabilities
-* Users can log in at multiple WP installs using the same login details. If they change their password or user information, the changes will be reflected on all WP installs.
-
-###Current Limitations
-* When a user logs in at one WP site, they are not automatically logged in on another WP site. That will probably require hacking WP's cookie system as well.
-
 ###What has been tested successfully
 * Log in and log-out on different sites.
 * Change password at one site, and see that it has been changed at the other.
 * Change usermeta data on one site for a user's profile and see it updated on the other site.
+
+###Current Limitations
+* When a user logs in at one WP site, they are not automatically logged in on another WP site. That will probably require hacking WP's cookie system as well.
 
 ###Requirements
 * Same table prefix: All DB's in the entire set must use the same wordpress DB table prefix (wp_ by default)
