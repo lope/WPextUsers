@@ -59,6 +59,7 @@ I don't have time to develop it more. I suggest you fork it and improve it.
 
 ###Future wishlist
 * Modify WP's automatic upgrade button to pull the upgrade from a test-server instead, so that novice users can upgrade WP any time.
+* A remote upgrade button would be nice. Tick the sites in a list, and click upgrade selected sites.
 
 #####Initial development
 WPextUsers was initially developed with WP version 4.0: http://wordpress.org/wordpress-4.0.tar.gz
