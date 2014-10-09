@@ -11,6 +11,13 @@ This is a proof of concept. It is not production ready yet.
 
 I don't have time to develop it more. I suggest you fork it and improve it.
 
+###Benefits of using this hack
+* It's simple
+* It works without any extra software or services
+
+###Drawbacks of using this hack
+* Novices can't use the automatic upgrade from Wordpress, you need to test it before making it available to them.
+
 ###Compatible with WP versions
 * 4.0
 
@@ -39,6 +46,8 @@ I don't have time to develop it more. I suggest you fork it and improve it.
 * Test CRUD (create read update delete) users, posts, pages.
 * Read the code to see what get's modified, check that everything looks okay.
 * Check/modify /wp-admin/user-new.php (I never got around to it, maybe more files need attention).
+* Create a test server for testing wordpress upgrades with WPextUsers
+* Modify the wordpress automatic upgrade button so that it pulls the modified wordpress files from the test-server instead of Wordpress.
 
 ###What could go wrong?
 * I'm not very familiar with the Wordpress. I've wildly monkey patched a few files that 'seem' to be 'all about users', replacing all references from the default DB to the Users DB, and have only skim read the WP code. I've not checked every single replacement carefully. Some replacements might be missing, some might be incorrect. Read the resulting code yourself. Or test thoroughly. It's your responsibility to make sure your site works.
