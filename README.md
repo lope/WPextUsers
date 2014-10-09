@@ -20,7 +20,7 @@ I don't have time to develop it more. I suggest you fork it and improve it.
 * Change usermeta data on one site for a user's profile and see it updated on the other site.
 
 ###Current Limitations
-* When a user logs in at one WP site, they are not automatically logged in on another WP site. That will probably require hacking WP's cookie system as well.
+* When a user logs in at one WP site, they are not automatically logged in on another WP site. Users must log in at each site (the username and password will be the same at every site). To log in at one site, and get authentication cookies for every site would require more modifications than just DB access.
 
 ###Requirements
 * Same table prefix: All DB's in the entire set must use the same wordpress DB table prefix (*wp_* by default).
