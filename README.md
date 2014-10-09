@@ -58,7 +58,7 @@ I don't have time to develop it more. I suggest you fork it and improve it.
 * Secondly (you should familiarize yourself with your dev environment) I used to get errors whenever WP tried to access an invalid DB object or tried to access a table that was not there. So if there are no errors that's a pretty good indication it's working. I didn't get any errors after completing the code as is, and my tests were successful.
 
 ###Future wishlist
-* If WP has permissions to do a self-update, make it run the hack again afterwards, automatically.
+* Modify WP's automatic upgrade button to pull the upgrade from a test-server instead, so that novice users can upgrade WP any time.
 
 WPextUsers was initially developed with WP version 4.0: http://wordpress.org/wordpress-4.0.tar.gz
 
