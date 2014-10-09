@@ -9,7 +9,7 @@ This is a Wordpress hack that allows you to have multiple WP installs (each with
 ###Hack Status
 This is a proof of concept. It is not production ready yet.
 
-I don't have time to work on it any more. I suggest you fork it and improve it.
+I don't have time to develop it more. I suggest you fork it and improve it.
 
 ###Compatible with WP versions
 * 4.0
