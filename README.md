@@ -49,7 +49,7 @@ I don't have time to develop it more. I suggest you fork it and improve it.
 * Create a test server for testing wordpress upgrades with WPextUsers
 * Modify the wordpress automatic upgrade button so that it pulls the modified wordpress files from the test-server instead of Wordpress.
 * Consider patching WP at an even lower level. If you modify the wpdb file, theoretically you'd only have to modify 1 file, so there would be less code to check when upgrading, and dramatically less that could break with WP code changes. You would need to grab the wpUsersDB details (defined in wp-config as it is now) from constants read inside the wpdb class, and re-route according to the SQL statements. If you're checking SQL statements for table names it would have a small (likely insignificant) performance impact.
-* If the code changes seem simple enough you could consider modifying wpdb and updater files automatically, like a self-sustaining virus.
+* If the code changes seem simple enough you could consider modifying wpdb and updater files automatically, so that the modification is self-sustaining.
 
 ###What could go wrong?
 * I'm not very familiar with the Wordpress. I've wildly monkey patched a few files that 'seem' to be 'all about users', replacing all references from the default DB to the Users DB, and have only skim read the WP code. I've not checked every single replacement carefully. Some replacements might be missing, some might be incorrect. Read the resulting code yourself. Or test thoroughly. It's your responsibility to make sure your site works.
